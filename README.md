@@ -18,10 +18,7 @@ MistakeBook is a mobile “mistake notebook” app built around spaced repetitio
 ## Tech Stack
 - **SwiftUI**
 - **SwiftData / Core Data** (local storage)
-- PDF export with Traditional Chinese font support (e.g., Microsoft JhengHei)
-
-## Roadmap (Experimental)
-- **Handwriting Removal**: on-device ML (segmentation + inpainting) to automatically clean handwritten areas
+- PDF export
 
 ## License
 TBD
@@ -46,10 +43,7 @@ MistakeBook（錯題本）は、エビングハウスの忘却曲線に着想を
 ## 技術スタック
 - **SwiftUI**
 - **SwiftData / Core Data**（ローカル保存）
-- 繁体字フォント対応の PDF 出力（例：Microsoft JhengHei）
-
-## ロードマップ（実験中）
-- **手書き除去**：端末内 ML（セグメンテーション＋インペインティング）で手書き領域を自動クリーニング
+- PDF 出力
 
 ## ライセンス
 TBD
@@ -75,10 +69,7 @@ MistakeBook（错题本）是一款以“间隔重复”学习方法为核心的
 ## 技术栈
 - **SwiftUI**
 - **SwiftData / Core Data**（本地存储）
-- PDF 导出支持中文字体（如 Microsoft JhengHei）
-
-## Roadmap（实验功能）
-- **自动去手写**：端侧 ML（分割 + 修复）自动清理手写区域
+- PDF 导出
 
 ## License
 TBD
