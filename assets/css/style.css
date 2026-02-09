@@ -85,3 +85,48 @@ a:hover{ opacity:.9; }
   color: var(--muted); font-size:13px;
   display:flex; flex-wrap:wrap; gap:10px; justify-content:space-between;
 }
+
+/* QR block inside Quick start card */
+.qrCard{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin: 10px 0 12px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(255,255,255,.03);
+}
+
+.qrImgLink{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  flex: 0 0 auto;
+}
+
+.qrImg{
+  width: 96px;
+  height: 96px;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: #fff; /* 保證 QR 在深色背景可讀 */
+}
+
+.qrText{
+  min-width: 0;
+}
+
+.qrTitle{
+  margin: 0;
+}
+
+.qrSub{
+  margin: 4px 0 0 0;
+  opacity: .85;
+}
+
+/* Better layout on small screens */
+@media (max-width: 900px){
+  .qrImg{ width: 88px; height: 88px; }
+}
