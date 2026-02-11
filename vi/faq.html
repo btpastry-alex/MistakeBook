@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MistakeBook | FAQ</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="brand">
+      <img src="/assets/img/logo.png" alt="MistakeBook" />
+      <a href="/vi/">MistakeBook</a>
+    </div>
+    <nav class="navlinks">
+      <a href="/vi/#features">Tính năng</a>
+      <a href="/vi/#screenshots">Ảnh chụp màn hình</a>
+      <a href="/vi/faq.html">FAQ</a>
+      <a href="/Privacy/privacy_vi.html">Chính sách quyền riêng tư</a>
+    </nav>
+    <div class="lang">
+      <a class="pill" href="/zh-Hant/faq.html">繁中</a>
+      <a class="pill" href="/faq.html">EN</a>
+      <a class="pill" href="/ja/faq.html">日本語</a>
+      <a class="pill" href="/ko/faq.html">한국어</a>
+      <a class="pill" href="/zh-Hans/faq.html">简中</a>
+      <a class="pill active" href="/vi/faq.html">Tiếng Việt</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1 class="h1" style="font-size:34px;">Câu hỏi thường gặp</h1>
+
+    <section class="section">
+      <div class="card">
+        <h3 class="h2">Q1: MistakeBook phù hợp với ai?</h3>
+        <p class="p">Phù hợp với học sinh và người tự học muốn tổng hợp lỗi sai, ôn tập lặp lại và chuẩn bị cho các kỳ thi (kiểm tra ở trường, thi chuẩn hóa, chứng chỉ, v.v.).</p>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <h3 class="h2">Q2: Tôi có thể nhập câu hỏi từ thư viện ảnh không?</h3>
+        <p class="p">Có. Bạn cũng có thể chụp ảnh bằng camera và cắt/ghi chú ngay khi thêm vào.</p>
+      </div>
+
+      <!-- ✅ Thêm: logic ôn tập cách quãng -->
+      <div class="card" style="margin-top:12px;">
+        <h3 class="h2">Q3: Ôn tập cách quãng (Spaced Review) tính lần ôn tiếp theo như thế nào?</h3>
+
+        <p class="p">
+          MistakeBook tính số ngày cho lần ôn tiếp theo theo “Khoảng cơ bản × Hệ số mức độ quen thuộc”,
+          và đặt giờ nhắc ở <strong>21:00</strong> trong ngày đó (có thể đổi trong Cài đặt).
+        </p>
+
+        <p class="p" style="margin-top:10px;">
+          <strong>Khoảng cơ bản (dựa trên số lần ôn sau khi bạn lưu lần này)</strong><br/>
+          [1, 2, 4, 7, 15, 30] (sau lần thứ 6, khoảng cơ bản cố định là 30)
+        </p>
+
+        <p class="p" style="margin-top:10px;">
+          <strong>Hệ số mức độ quen thuộc</strong><br/>
+          1 → 0.7 ｜ 2 → 1.0 ｜ 3 → 1.6 ｜ 4 → 2.4
+        </p>
+
+        <p class="p" style="margin-top:10px;">
+          <strong>Công thức</strong><br/>
+          Số ngày tiếp theo = round( Khoảng cơ bản[số lần ôn] × Hệ số )<br/>
+          Sau đó đặt giờ là 21:00 trong ngày đó (có thể đổi trong Cài đặt)
+        </p>
+
+        <div class="card" style="margin-top:12px; background: rgba(255,255,255,.03);">
+          <p class="kicker">Ví dụ (giả sử hôm nay là 2026-02-11)</p>
+
+          <p class="p" style="margin-top:8px;">
+            <strong>Ví dụ 1: Lần ôn 1, mức 1</strong><br/>
+            1 × 0.7 = 0.7 → làm tròn = 1 ngày<br/>
+            Lần tiếp theo: 2026-02-12 21:00
+          </p>
+
+          <p class="p" style="margin-top:10px;">
+            <strong>Ví dụ 2: Lần ôn 2, mức 3</strong><br/>
+            2 × 1.6 = 3.2 → làm tròn = 3 ngày<br/>
+            Lần tiếp theo: 2026-02-14 21:00
+          </p>
+
+          <p class="p" style="margin-top:10px;">
+            <strong>Ví dụ 3: Lần ôn 4, mức 4</strong><br/>
+            7 × 2.4 = 16.8 → làm tròn = 17 ngày<br/>
+            Lần tiếp theo: 2026-02-28 21:00
+          </p>
+
+          <p class="p" style="margin-top:10px;">
+            <strong>Ví dụ 4: Lần ôn 7, mức 2</strong><br/>
+            Từ lần ôn thứ 7 trở đi, khoảng cơ bản cố định là 30<br/>
+            30 × 1.0 = 30 ngày<br/>
+            Lần tiếp theo: 2026-03-13 21:00
+          </p>
+        </div>
+
+        <p class="p" style="margin-top:12px;">
+          <strong>Hai trường hợp đặc biệt</strong><br/>
+          • Mức 5: đánh dấu hoàn thành, đưa ra khỏi danh sách ôn tập và không lên lịch lần tiếp theo.<br/>
+          • Mức 0: không tính lại thời gian (giữ lịch hiện tại).
+        </p>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <h3 class="h2">Q4: Dữ liệu có được tải lên máy chủ không?</h3>
+        <p class="p">Không. Dữ liệu được lưu trên thiết bị của bạn.</p>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <h3 class="h2">Q5: Liên hệ hỗ trợ như thế nào?</h3>
+        <p class="p">Gửi email tới <a href="mailto:support@mistakebook.app">support@mistakebook.app</a>.</p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>← <a href="/vi/">Về trang chủ</a></div>
+      <div><a href="/Privacy/privacy_vi.html">Chính sách quyền riêng tư</a></div>
+    </footer>
+  </main>
+</body>
+</html>
