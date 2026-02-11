@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MistakeBook｜FAQ</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="brand">
+      <img src="/assets/img/logo.png" alt="MistakeBook" />
+      <a href="/ja/">MistakeBook</a>
+    </div>
+    <nav class="navlinks">
+      <a href="/ja/#features">特徴</a>
+      <a href="/ja/#screenshots">スクリーンショット</a>
+      <a href="/ja/faq.html">FAQ</a>
+      <a href="/Privacy/privacy_ja.html">プライバシーポリシー</a>
+    </nav>
+    <div class="lang">
+      <a class="pill" href="/zh-Hant/faq.html">繁中</a>
+      <a class="pill" href="/faq.html">EN</a>
+      <a class="pill active" href="/ja/faq.html">日本語</a>
+      <a class="pill" href="/ko/faq.html">한국어</a>
+      <a class="pill" href="/zh-Hans/faq.html">简中</a>
+      <a class="pill" href="/vi/faq.html">Tiếng Việt</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1 class="h1" style="font-size:34px;">よくある質問</h1>
+
+    <section class="section">
+      <div class="card">
+        <h3 class="h2">Q1：MistakeBook はどんな人におすすめですか？</h3>
+        <p class="p">ミス（間違い）を整理し、繰り返し復習して、テストや試験（定期テスト、受験、資格など）に備えたい学生・学習者におすすめです。</p>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <h3 class="h2">Q2：写真ライブラリから問題を取り込めますか？</h3>
+        <p class="p">はい。カメラで撮影して追加することもでき、追加時にトリミングや注釈（書き込み）も行えます。</p>
+      </div>
+
+      <!-- ✅ 追加：間隔反復ロジック -->
+      <div class="card" style="margin-top:12px;">
+        <h3 class="h2">Q3：間隔反復（Spaced Review）は次の復習時間をどう計算しますか？</h3>
+
+        <p class="p">
+          MistakeBook は「基礎間隔 × 習熟度倍率」で次の復習日数を計算し、通知時刻を
+          <strong>当日 21:00</strong> に設定します（設定画面で通知時刻は変更できます）。
+        </p>
+
+        <p class="p" style="margin-top:10px;">
+          <strong>基礎間隔（今回保存後の復習回数に応じる）</strong><br/>
+          [1, 2, 4, 7, 15, 30]（6回目以降は 30 固定）
+        </p>
+
+        <p class="p" style="margin-top:10px;">
+          <strong>習熟度倍率</strong><br/>
+          1 → 0.7 ｜ 2 → 1.0 ｜ 3 → 1.6 ｜ 4 → 2.4
+        </p>
+
+        <p class="p" style="margin-top:10px;">
+          <strong>計算式</strong><br/>
+          次の間隔（日）= round( 基礎間隔[復習回数] × 習熟度倍率 )<br/>
+          その日の 21:00 に設定（設定で変更可）
+        </p>
+
+        <div class="card" style="margin-top:12px; background: rgba(255,255,255,.03);">
+          <p class="kicker">例（今日が 2026-02-11 の場合）</p>
+
+          <p class="p" style="margin-top:8px;">
+            <strong>例1：1回目、習熟度1</strong><br/>
+            1 × 0.7 = 0.7 → round = 1日<br/>
+            次回：2026-02-12 21:00
+          </p>
+
+          <p class="p" style="margin-top:10px;">
+            <strong>例2：2回目、習熟度3</strong><br/>
+            2 × 1.6 = 3.2 → round = 3日<br/>
+            次回：2026-02-14 21:00
+          </p>
+
+          <p class="p" style="margin-top:10px;">
+            <strong>例3：4回目、習熟度4</strong><br/>
+            7 × 2.4 = 16.8 → round = 17日<br/>
+            次回：2026-02-28 21:00
+          </p>
+
+          <p class="p" style="margin-top:10px;">
+            <strong>例4：7回目、習熟度2</strong><br/>
+            7回目以降は基礎間隔が 30 固定<br/>
+            30 × 1.0 = 30日<br/>
+            次回：2026-03-13 21:00
+          </p>
+        </div>
+
+        <p class="p" style="margin-top:12px;">
+          <strong>2つの特例</strong><br/>
+          • 習熟度 5：完了として扱い、復習リストから外し、次回は設定しません。<br/>
+          • 習熟度 0：次回を再計算しません（既存の予定を保持します）。
+        </p>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <h3 class="h2">Q4：データはサーバーにアップロードされますか？</h3>
+        <p class="p">いいえ。データは端末内に保存されます。</p>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <h3 class="h2">Q5：サポートへの連絡方法は？</h3>
+        <p class="p"><a href="mailto:support@mistakebook.app">support@mistakebook.app</a> までメールしてください。</p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>← <a href="/ja/">ホームへ戻る</a></div>
+      <div><a href="/Privacy/privacy_ja.html">プライバシーポリシー</a></div>
+    </footer>
+  </main>
+</body>
+</html>
