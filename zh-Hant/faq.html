@@ -1,1 +1,120 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MistakeBook｜FAQ</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="brand">
+      <img src="/assets/img/logo.png" alt="MistakeBook" />
+      <a href="/zh-Hant/">MistakeBook</a>
+    </div>
+    <nav class="navlinks">
+      <a href="/zh-Hant/#features">特色</a>
+      <a href="/zh-Hant/#screenshots">截圖</a>
+      <a href="/zh-Hant/faq.html">FAQ</a>
+      <a href="/zh-Hant/privacy.html">隱私權政策</a>
+    </nav>
+    <div class="lang">
+      <a class="pill active" href="/zh-Hant/faq.html">繁中</a>
+      <a class="pill" href="/en/faq.html">EN</a>
+      <a class="pill" href="/ja/faq.html">日本語</a>
+    </div>
+  </header>
 
+  <main class="container">
+    <h1 class="h1" style="font-size:34px;">常見問題</h1>
+
+    <section class="section">
+      <div class="card">
+        <h3 class="h2">Q1：MistakeBook 適合誰？</h3>
+        <p class="p">適合需要整理錯題、重複複習、準備考試（學測、段考、證照等）的學生與自學者。</p>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <h3 class="h2">Q2：我可以把題目從相簿匯入嗎？</h3>
+        <p class="p">可以。你也可以用相機直接拍照，並在加入時裁切與標註。</p>
+      </div>
+
+      <!-- ✅ 新增：間隔複習邏輯 -->
+      <div class="card" style="margin-top:12px;">
+        <h3 class="h2">Q3：間隔複習（Spaced Review）是怎麼計算下次複習時間的？</h3>
+
+        <p class="p">
+          MistakeBook 使用「基礎間隔 × 熟悉度倍率」來計算下次複習天數，並把提醒時間排在
+          <strong>當天 21:00</strong>（可在設定頁修改提醒時間）。
+        </p>
+
+        <p class="p" style="margin-top:10px;">
+          <strong>基礎間隔（依「本次儲存後」的複習次數）</strong><br/>
+          [1, 2, 4, 7, 15, 30]（超過第 6 次後都固定用 30）
+        </p>
+
+        <p class="p" style="margin-top:10px;">
+          <strong>熟悉度倍率</strong><br/>
+          1 → 0.7　｜　2 → 1.0　｜　3 → 1.6　｜　4 → 2.4
+        </p>
+
+        <p class="p" style="margin-top:10px;">
+          <strong>計算公式</strong><br/>
+          下次天數 = round( 基礎間隔[第幾次複習] × 熟悉度倍率 )<br/>
+          然後把時間設為當天 21:00（可在設定頁修改提醒時間）
+        </p>
+
+        <div class="card" style="margin-top:12px; background: rgba(255,255,255,.03);">
+          <p class="kicker">範例（假設現在是 2026-02-11）</p>
+
+          <p class="p" style="margin-top:8px;">
+            <strong>例 1：第 1 次複習、熟悉度 1</strong><br/>
+            1 × 0.7 = 0.7 → 四捨五入後是 1 天<br/>
+            下次：2026-02-12 21:00
+          </p>
+
+          <p class="p" style="margin-top:10px;">
+            <strong>例 2：第 2 次複習、熟悉度 3</strong><br/>
+            2 × 1.6 = 3.2 → 四捨五入後是 3 天<br/>
+            下次：2026-02-14 21:00
+          </p>
+
+          <p class="p" style="margin-top:10px;">
+            <strong>例 3：第 4 次複習、熟悉度 4</strong><br/>
+            7 × 2.4 = 16.8 → 四捨五入後是 17 天<br/>
+            下次：2026-02-28 21:00
+          </p>
+
+          <p class="p" style="margin-top:10px;">
+            <strong>例 4：第 7 次複習、熟悉度 2</strong><br/>
+            第 7 次起基礎間隔固定用 30<br/>
+            30 × 1.0 = 30 天<br/>
+            下次：2026-03-13 21:00
+          </p>
+        </div>
+
+        <p class="p" style="margin-top:12px;">
+          <strong>兩個特例</strong><br/>
+          • 熟悉度 5：直接標記完成，移出複習清單，不再排下次時間。<br/>
+          • 熟悉度 0：不重算下次時間（保留原本排程）。
+        </p>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <h3 class="h2">Q4：資料會上傳到伺服器嗎？</h3>
+        <p class="p">（依你的實作填寫）例如：資料保存在裝置上，不會上傳；或僅在你啟用同步時才會傳輸。</p>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <h3 class="h2">Q5：如何聯絡客服？</h3>
+        <p class="p">寄信到 <a href="mailto:support@mistakebook.app">support@mistakebook.app</a>。</p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>← <a href="/zh-Hant/">回首頁</a></div>
+      <div><a href="/zh-Hant/privacy.html">隱私權政策</a></div>
+    </footer>
+  </main>
+</body>
+</html>
