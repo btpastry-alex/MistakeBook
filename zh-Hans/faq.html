@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MistakeBook｜FAQ</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="brand">
+      <img src="/assets/img/logo.png" alt="MistakeBook" />
+      <a href="/zh-Hans/">MistakeBook</a>
+    </div>
+    <nav class="navlinks">
+      <a href="/zh-Hans/#features">特色</a>
+      <a href="/zh-Hans/#screenshots">截图</a>
+      <a href="/zh-Hans/faq.html">FAQ</a>
+      <a href="/Privacy/privacy_zh-Hans.html">隐私政策</a>
+    </nav>
+    <div class="lang">
+      <a class="pill" href="/zh-Hant/faq.html">繁中</a>
+      <a class="pill" href="/faq.html">EN</a>
+      <a class="pill" href="/ja/faq.html">日本語</a>
+      <a class="pill" href="/ko/faq.html">한국어</a>
+      <a class="pill active" href="/zh-Hans/faq.html">简中</a>
+      <a class="pill" href="/vi/faq.html">Tiếng Việt</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1 class="h1" style="font-size:34px;">常见问题</h1>
+
+    <section class="section">
+      <div class="card">
+        <h3 class="h2">Q1：MistakeBook 适合谁？</h3>
+        <p class="p">适合需要整理错题、反复复习、准备考试（升学考试、阶段测验、证照等）的学生与自学者。</p>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <h3 class="h2">Q2：我可以从相册导入题目吗？</h3>
+        <p class="p">可以。你也可以用相机直接拍照，并在添加时裁切与标注。</p>
+      </div>
+
+      <!-- ✅ 新增：间隔复习逻辑 -->
+      <div class="card" style="margin-top:12px;">
+        <h3 class="h2">Q3：间隔复习（Spaced Review）如何计算下次复习时间？</h3>
+
+        <p class="p">
+          MistakeBook 使用“基础间隔 × 熟悉度倍率”来计算下次复习天数，并将提醒时间安排在
+          <strong>当天 21:00</strong>（可在设置页修改提醒时间）。
+        </p>
+
+        <p class="p" style="margin-top:10px;">
+          <strong>基础间隔（以“本次保存后”的复习次数为准）</strong><br/>
+          [1, 2, 4, 7, 15, 30]（超过第 6 次后固定使用 30）
+        </p>
+
+        <p class="p" style="margin-top:10px;">
+          <strong>熟悉度倍率</strong><br/>
+          1 → 0.7 ｜ 2 → 1.0 ｜ 3 → 1.6 ｜ 4 → 2.4
+        </p>
+
+        <p class="p" style="margin-top:10px;">
+          <strong>计算公式</strong><br/>
+          下次天数 = round( 基础间隔[第几次复习] × 熟悉度倍率 )<br/>
+          然后将时间设为当天 21:00（可在设置页修改提醒时间）
+        </p>
+
+        <div class="card" style="margin-top:12px; background: rgba(255,255,255,.03);">
+          <p class="kicker">示例（假设现在是 2026-02-11）</p>
+
+          <p class="p" style="margin-top:8px;">
+            <strong>例 1：第 1 次复习、熟悉度 1</strong><br/>
+            1 × 0.7 = 0.7 → 四舍五入为 1 天<br/>
+            下次：2026-02-12 21:00
+          </p>
+
+          <p class="p" style="margin-top:10px;">
+            <strong>例 2：第 2 次复习、熟悉度 3</strong><br/>
+            2 × 1.6 = 3.2 → 四舍五入为 3 天<br/>
+            下次：2026-02-14 21:00
+          </p>
+
+          <p class="p" style="margin-top:10px;">
+            <strong>例 3：第 4 次复习、熟悉度 4</strong><br/>
+            7 × 2.4 = 16.8 → 四舍五入为 17 天<br/>
+            下次：2026-02-28 21:00
+          </p>
+
+          <p class="p" style="margin-top:10px;">
+            <strong>例 4：第 7 次复习、熟悉度 2</strong><br/>
+            从第 7 次起基础间隔固定用 30<br/>
+            30 × 1.0 = 30 天<br/>
+            下次：2026-03-13 21:00
+          </p>
+        </div>
+
+        <p class="p" style="margin-top:12px;">
+          <strong>两个特例</strong><br/>
+          • 熟悉度 5：直接标记完成，从复习清单移除，不再安排下次时间。<br/>
+          • 熟悉度 0：不重新计算下次时间（保留原有计划）。
+        </p>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <h3 class="h2">Q4：数据会上传到服务器吗？</h3>
+        <p class="p">不会上传，数据保存在设备上。</p>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <h3 class="h2">Q5：如何联系客服？</h3>
+        <p class="p">请发送邮件至 <a href="mailto:support@mistakebook.app">support@mistakebook.app</a>。</p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>← <a href="/zh-Hans/">返回首页</a></div>
+      <div><a href="/Privacy/privacy_zh-Hans.html">隐私政策</a></div>
+    </footer>
+  </main>
+</body>
+</html>
